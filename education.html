@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Imani Carey</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --light: #f9fafb;
+            --dark: #312e81;
+            --accent: #8b5cf6;
+            --success: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #4338ca, #6d28d9);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .profile {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-size: 80px;
+            color: var(--primary);
+        }
+
+        .profile h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .profile h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tabs a {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-tabs a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-tabs a.active {
+            color: white;
+        }
+
+        .nav-tabs a.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Main content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            display: inline-block;
+            background-color: #f5f5f5;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #e5e7eb;
+        }
+
+        /* Education section */
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .education-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-date {
+            display: inline-block;
+            background-color: #e5e7eb;
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .education-school {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .education-text {
+            color: var(--secondary);
+        }
+
+        .course-list {
+            margin-top: 20px;
+        }
+
+        .course-list h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .course-list ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        .course-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .course-list li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .education-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-img">IC</div>
+                <h1>Imani Carey</h1>
+                <h2>Project Management & Data Analytics Professional</h2>
+                <p>Former Director of Operations with experience in project management, data analytics, and cybersecurity</p>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/imani-carey-ic" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:imanic2@uw.edu" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="nav-tabs">
+                    <a href="index.html">About</a>
+                    <a href="experience.html">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="education.html" class="active">Education</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Education Section -->
+        <section id="education" class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+
+            <div class="education-cards">
+                <div class="education-card">
+                    <span class="education-date">June 2024 - June 2025</span>
+                    <h3 class="education-degree">Master of Science in Information Systems</h3>
+                    <h4 class="education-school">University of Washington</h4>
+                    <div class="education-text">
+                        <p>The MSIS curriculum engages future technology and business leaders who are at the forefront of innovation. At the University of Washington, I'm developing in-depth knowledge and skills in cutting-edge technologies such as artificial intelligence, machine learning, cybersecurity, and cloud computing, while learning to approach technologies as a disruptive force to transform organizations.</p>
+                        
+                        <div class="course-list">
+                            <h4>Key Coursework:</h4>
+                            <ul>
+                                <li>Information Technology and Organizational Strategy</li>
+                                <li>Business Data Analysis with Python</li>
+                                <li>Operations and Business Process Management</li>
+                                <li>Business Decision Models</li>
+                                <li>Information Security & Assurance</li>
+                                <li>Data Mining & Analytics</li>
+                                <li>Advanced Database Systems (Snowflake)</li>
+                                <li>IT Project Management</li>
+                                <li>Machine Learning & AI for Business Applications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="course-list">
+                            <h4>Skills Developed:</h4>
+                            <ul>
+                                <li>Python & R Programming</li>
+                                <li>Statistical Analysis & Data Visualization</li>
+                                <li>SQL & Database Management</li>
+                                <li>Enterprise Systems Architecture</li>
+                                <li>Project Management Methodologies</li>
+                                <li>Cybersecurity Risk Assessment</li>
+                                <li>Cloud Computing Infrastructure</li>
+                                <li>Machine Learning Model Development</li>
+                                <li>Business Analytics & Decision Modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <span class="education-date">2017 - 2021</span>
+                    <h3 class="education-degree">Bachelor of Arts - BA, Financial Economics & Information Systems</h3>
+                    <h4 class="education-school">Seattle Pacific University</h4>
+                    <div class="education-text">
+                        <p>At Seattle Pacific University, I focused on Financial Economics and Information Systems, gaining essential skills in decision-making, resource management, and public policy. The curriculum also included courses in computer science, applied calculus, and management, which equipped me to bridge technology with organizational needs.</p>
+                        
+                        <div class="course-list">
+                            <h4>Leadership & Community Engagement:</h4>
+                            <ul>
+                                <li>Founded a mentorship program during my freshman year within the Ascent program, which has become a key part of student support at SPU</li>
+                                <li>Served as an Orientation Leader as a Sophomore</li>
+                                <li>Worked as a Resident Advisor for 2 years (Junior and Senior years), fostering community and ensuring the well-being of 40 students</li>
+                                <li>Active member of Beta Alpha Psi, BEGIN, and BSU student organizations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 60px;">
+                <h2>Certifications</h2>
+            </div>
+
+            <div class="education-cards">
+                <div class="education-card">
+                    <span class="education-date">2023</span>
+                    <h3 class="education-degree">Microsoft Excel Expert Certification</h3>
+                    <div class="education-text">
+                        <p>Advanced proficiency in data analysis, modeling, and visualization using Microsoft Excel. Developed expertise in pivot tables, advanced formulas, data validation, and automation through macros.</p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <span class="education-date">2022</span>
+                    <h3 class="education-degree">R Programming for Data Science</h3>
+                    <div class="education-text">
+                        <p>Comprehensive certification in statistical programming using R. Developed skills in data manipulation, visualization, and statistical modeling for business analytics and decision support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Imani Carey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

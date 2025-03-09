@@ -1,0 +1,125 @@
+/* Video background styles */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+/* Portfolio button styles */
+.work-button {
+    margin-top: 25px;
+}
+
+.btn-work {
+    display: inline-block;
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-work:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.theme-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+    background-color: white;
+    color: var(--dark);
+}
+
+/* Dark theme */
+.dark-theme {
+    background-color: #1e1e2e;
+    color: #e2e2e2;
+}
+
+.dark-theme .section-title h2 {
+    background-color: #1e1e2e;
+}
+
+.dark-theme .project-card,
+.dark-theme .education-card,
+.dark-theme .contact-form {
+    background-color: #2a2a40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .project-title,
+.dark-theme .education-degree,
+.dark-theme .timeline-title,
+.dark-theme .contact-label {
+    color: #e2e2e2;
+}
+
+/* Animation for project cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: calc(var(--index) * 0.1s);
+  .about-image {
+    flex: 0 0 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-height: 350px; /* Control the maximum height */
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain */
+    display: block;
+    transition: transform 0.3s ease;
+  }
+}

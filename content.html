@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Imani Carey</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Same styles as in projects.html with additions */
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --light: #f9fafb;
+            --dark: #312e81;
+            --accent: #8b5cf6;
+            --success: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #4338ca, #6d28d9);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Rest of the existing styles... */
+
+        /* New portfolio gallery styles */
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+            background: white;
+        }
+
+        .portfolio-category {
+            color: var(--primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-desc {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 40px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .back-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-img">IC</div>
+                <h1>Imani Carey</h1>
+                <h2>My Portfolio</h2>
+                <p>A showcase of my project work and professional accomplishments</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="container" style="text-align: center; padding: 60px 0;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">My Featured Work</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: #555;">Here's a collection of my recent projects and accomplishments in data analytics, project management, and technology implementation.</p>
+
+            <div class="portfolio-gallery">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/4f46e5/ffffff?text=Data+Analytics" alt="Data Analytics Project" class="portfolio-image">
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Data Analytics</div>
+                        <h3 class="portfolio-title">Business Intelligence Dashboard</h3>
+                        <p class="portfolio-desc">Created interactive dashboards using Tableau to visualize key performance indicators for executive decision-making.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Project+Management" alt="Project Management" class="portfolio-image">
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Project Management</div>
+                        <h3 class="portfolio-title">City-Wide Initiative</h3>
+                        <p class="portfolio-desc">Led a cross-functional team to implement new operational processes, resulting in 30% efficiency improvement.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/06b6d4/ffffff?text=Tech+Implementation" alt="Technology Implementation" class="portfolio-image">
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Technology Implementation</div>
+                        <h3 class="portfolio-title">Cloud Data Warehouse</h3>
+                        <p class="portfolio-desc">Successfully migrated legacy systems to Snowflake, improving query performance by 40% and reducing costs.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/10b981/ffffff?text=Python+Development" alt="Python Development" class="portfolio-image">
+                    <div class="portfolio-info">
+                        <div class="portfolio-category">Python Development</div>
+                        <h3 class="portfolio-title">Automated Reporting System</h3>
+                        <p class="portfolio-desc">Built a Python application that automated weekly reporting, saving 15 hours of manual work per week.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-home">Back to Home</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Imani Carey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

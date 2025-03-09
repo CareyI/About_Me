@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Imani Carey</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --light: #f9fafb;
+            --dark: #312e81;
+            --accent: #8b5cf6;
+            --success: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #4338ca, #6d28d9);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .profile {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-size: 80px;
+            color: var(--primary);
+        }
+
+        .profile h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .profile h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tabs a {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-tabs a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-tabs a.active {
+            color: white;
+        }
+
+        .nav-tabs a.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Main content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            display: inline-block;
+            background-color: #f5f5f5;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #e5e7eb;
+        }
+
+        /* Experience section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e5e7eb;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 10px 40px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #8b5cf6, #6d28d9);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.3);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -14px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -14px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 10px;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            border-color: transparent white transparent transparent;
+            right: -20px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            border-color: transparent transparent transparent white;
+            left: -20px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+        }
+
+        .timeline-title {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .timeline-text {
+            color: var(--secondary);
+        }
+
+        .timeline-text ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .timeline-text li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+
+            .timeline-item::after {
+                left: 15px !important;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                border-color: transparent transparent transparent white;
+                right: auto;
+                left: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-img">IC</div>
+                <h1>Imani Carey</h1>
+                <h2>Project Management & Data Analytics Professional</h2>
+                <p>Former Director of Operations with experience in project management, data analytics, and cybersecurity</p>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/imani-carey-ic" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:imanic2@uw.edu" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="nav-tabs">
+                    <a href="index.html">About</a>
+                    <a href="experience.html" class="active">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="education.html">Education</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Experience Section -->
+        <section id="experience" class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">July 2021 - March 2024</span>
+                        <h3 class="timeline-title">Operations Director</h3>
+                        <h4>City of Seattle – Legislative Department</h4>
+                        <div class="timeline-text">
+                            <ul>
+                                <li>Led the deployment of Notion and Asana project management software systems, achieving a 30% reduction in project completion times.</li>
+                                <li>Managed and mentored a team of 5 interns, ensuring the successful execution of 10 large scale district projects.</li>
+                                <li>Maintained strong communications and relationships with data scientists, business analysts and government representatives aiding in the passage of over $1B in public funding over 3 years.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">September 2020 - June 2021</span>
+                        <h3 class="timeline-title">Engagement Coordinator (Internship)</h3>
+                        <h4>City of Seattle – Legislative Department</h4>
+                        <div class="timeline-text">
+                            <ul>
+                                <li>Implemented an efficient filtering system for a high-volume external inbox of over 10,000 emails, optimizing email management and reducing response time by 50%.</li>
+                                <li>Developed and implemented a comprehensive intern guide, ensuring standardized training and seamless transitions for over 15 interns.</li>
+                                <li>Assisted in resolving an average of 3 constituent cases per day, improving community support and reducing complaint resolution time by 20%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 60px;">
+                <h2>Course Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Summer Quarter</span>
+                        <h3 class="timeline-title">Information Technology and Organizational Strategy</h3>
+                        <div class="timeline-text">
+                            <p>This course emphasized leveraging IT as a strategic asset to create competitive advantage. We explored IT-enabled business models, digital transformation, and tools like strategic analysis frameworks to align technology investments with business goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Summer Quarter</span>
+                        <h3 class="timeline-title">Business Data Analysis</h3>
+                        <div class="timeline-text">
+                            <p>From Python and Pandas to data visualization with Matplotlib, I gained hands-on experience in extracting actionable insights from big data. We also explored the integration of AI in business decisions, reinforcing the importance of data-driven strategies in today's digital world.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Summer Quarter</span>
+                        <h3 class="timeline-title">Operations and Business Process Management</h3>
+                        <div class="timeline-text">
+                            <p>This course was a comprehensive exploration of process optimization. We covered process analysis and bottlenecks, forecasting, queuing models, pooling and priority, Lean and Six Sigma, and visibility and coordination. The focus was on using these methodologies to enhance efficiency and effectiveness in various organizational settings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Summer Quarter</span>
+                        <h3 class="timeline-title">Business Decision Models</h3>
+                        <div class="timeline-text">
+                            <p>I honed my skills in decision modeling and optimization using Microsoft Excel's Solver, TreePlan for decision trees, and Crystal Ball for Monte Carlo simulations. The focus was on applying these tools to real-world scenarios, from linear programming to sensitivity analysis, to enhance decision-making under uncertainty.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Autumn Quarter</span>
+                        <h3 class="timeline-title">Information Security & Assurance</h3>
+                        <div class="timeline-text">
+                            <p>I worked with cybersecurity frameworks focused on identifying, protecting, detecting, responding, and recovering from threats. Learned about Zero Trust, SIEM deployment, and incident response preparedness. I gained practical experience in communicating security risks and strategies to business leaders.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Autumn Quarter</span>
+                        <h3 class="timeline-title">Data Mining & Analytics</h3>
+                        <div class="timeline-text">
+                            <p>I learned core concepts in linear and logistic regression, CART, random forests, and hierarchical/K-means clustering using Python. Studied how to apply these analytics techniques to real business situations, focusing on training versus testing data and creating meaningful insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Autumn Quarter</span>
+                        <h3 class="timeline-title">Advanced Database Systems</h3>
+                        <div class="timeline-text">
+                            <p>I worked with Snowflake to understand modern data warehouse architecture. Learned about query optimization, semi-structured data handling, and data layout strategies. The course combined technical implementation with strategic planning for enterprise-scale systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Autumn Quarter</span>
+                        <h3 class="timeline-title">IT Project Management</h3>
+                        <div class="timeline-text">
+                            <p>I learned to apply agile methodologies including Scrum, Kanban, and eXtreme Programming. Used design thinking principles to transform customer needs into technical requirements. I gained experience in both product development lifecycle and team management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Imani Carey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
